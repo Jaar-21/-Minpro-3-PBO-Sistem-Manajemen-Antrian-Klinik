@@ -9,12 +9,12 @@ package model;
  * @author Asus
  */
 public class PasienBPJS extends Pasien {
-    protected String nomorBPJS;
+    private String nomorBPJS;
 
-    public PasienBPJS(int idPasien, String nama, int umur,
+    public PasienBPJS(String nama, int umur,
             String noTelepon, String nomorBPJS){
 
-        super(idPasien, nama, umur, noTelepon);
+        super(nama, umur, noTelepon);
         this.nomorBPJS = nomorBPJS;
     }
 
@@ -23,11 +23,26 @@ public class PasienBPJS extends Pasien {
     }
 
     public void setNomorBPJS(String nomorBPJS){
-        this.nomorBPJS = nomorBPJS;
+        if (nomorBPJS != null && nomorBPJS.matches("\\d+")) {
+            this.nomorBPJS = nomorBPJS;
+        } else {
+            System.out.println("Nomor BPJS hanya boleh berupa angka");
+        }
     }
 
     @Override
     public String getInfoTambahan(){
         return "BPJS: " + nomorBPJS;
+    }
+    @Override
+    public void tampilkanInfo(){
+        System.out.println("========================");
+        System.out.println("Kategori Pasien BPJS");
+        System.out.println("ID Pasien  : " + getIdPasien());
+        System.out.println("Nama       : " + getNama());
+        System.out.println("Umur       : " + getUmur());
+        System.out.println("No Telepon : " + getNoTelepon());
+        System.out.println("Nomor BPJS : " + nomorBPJS);
+        System.out.println("========================");
     }
 }

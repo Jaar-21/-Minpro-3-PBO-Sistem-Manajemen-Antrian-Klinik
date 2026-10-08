@@ -5,12 +5,10 @@
 package view;
 
 import model.Pasien;
-import model.PasienUmum;
-import model.PasienBPJS;
 import java.util.ArrayList;
 
 /**
- * @author Asus
+ * @author Asus     
  */
 public class PasienView {
 
@@ -26,11 +24,6 @@ public class PasienView {
         System.out.println("6. Keluar");
     }
 
-    public void tampilkanSubMenuTampilkan(){
-        System.out.println("===== TAMPILKAN PASIEN =====");
-        System.out.println("1. Pasien Umum");
-        System.out.println("2. Pasien BPJS");
-    }
 
     public void tampilkanPilihanJenisPasien(){
         System.out.println("1. Pasien Umum");
@@ -46,36 +39,6 @@ public class PasienView {
                     "ID", "Nama", "Umur", "NO Telepon", "Info Tambahan");
             for (Pasien pasien : listPasien){
                 System.out.println(pasien);
-            }
-        }
-    }
-
-    public void tampilkanDaftarPasienUmum(ArrayList<PasienUmum> listPasienUmum){
-        if (listPasienUmum.isEmpty()){
-            System.out.println("Belum ada data pasien umum");
-        } else {
-            System.out.println("===== PASIEN UMUM =====\n");
-            System.out.printf("%-10s | %-20s | %-6s | %-15s | %-20s\n",
-                    "ID", "Nama", "Umur", "NO Telepon", "Jenis Pembayaran");
-            for (PasienUmum pasien : listPasienUmum){
-                System.out.printf("%-10d | %-20s | %-6d | %-15s | %-20s\n",
-                        pasien.getIdPasien(), pasien.getNama(), pasien.getUmur(),
-                        pasien.getNoTelepon(), pasien.getJenisPembayaran());
-            }
-        }
-    }
-
-    public void tampilkanDaftarPasienBPJS(ArrayList<PasienBPJS> listPasienBPJS){
-        if (listPasienBPJS.isEmpty()){
-            System.out.println("Belum ada data pasien BPJS");
-        } else {
-            System.out.println("===== PASIEN BPJS =====\n");
-            System.out.printf("%-10s | %-20s | %-6s | %-15s | %-20s\n",
-                    "ID", "Nama", "Umur", "NO Telepon", "NO BPJS");
-            for (PasienBPJS pasien : listPasienBPJS){
-                System.out.printf("%-10d | %-20s | %-6d | %-15s | %-20s\n",
-                        pasien.getIdPasien(), pasien.getNama(), pasien.getUmur(),
-                        pasien.getNoTelepon(), pasien.getNomorBPJS());
             }
         }
     }

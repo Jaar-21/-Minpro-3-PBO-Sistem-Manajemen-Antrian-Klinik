@@ -19,7 +19,7 @@ public class PasienCRUD {
 
     public PasienCRUD() {
         PasienUmum pasienUmum = new PasienUmum(
-                1, "Ahmad", 20, "08123456789", "Tunai");
+                "Ahmad", 20, "08123456789", "Tunai");
 
         listPasien.add(pasienUmum);
         listPasienUmum.add(pasienUmum);
@@ -47,14 +47,6 @@ public class PasienCRUD {
 
     public ArrayList<Pasien> getListPasien(){
         return listPasien;
-    }
-
-    public ArrayList<PasienUmum> getListPasienUmum(){
-        return listPasienUmum;
-    }
-
-    public ArrayList<PasienBPJS> getListPasienBPJS(){
-        return listPasienBPJS;
     }
 
     /// hapus pasien 
